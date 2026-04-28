@@ -78,7 +78,7 @@ export function repositoryProfileForSlug(slug: string): RepositoryProfile | unde
 }
 
 export function normalizeRepo(targetRepo: string): string {
-  return targetRepo.trim().toLowerCase();
+  return targetRepo?.trim()?.toLowerCase();
 }
 
 export function isAutoCloseAllowed(
@@ -86,5 +86,5 @@ export function isAutoCloseAllowed(
   kind: RepositoryItemKind,
   reason: RepositoryCloseReason,
 ): boolean {
-  return Boolean(profile.applyCloseRules[kind]?.includes(reason));
+  return Boolean(profile?.applyCloseRules[kind]?.includes(reason));
 }
